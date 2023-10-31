@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.project.myapplication.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_dogFragment"
+            app:destination="@id/dogFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_catFragment"
+            app:destination="@id/catFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dogFragment"
+        android:name="com.project.myapplication.DogFragment"
+        android:label="fragment_dog"
+        tools:layout="@layout/fragment_dog">
+
+        <action
+            android:id="@+id/action_dogFragment_to_dogDetailFragment"
+            app:destination="@id/dogDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/catFragment"
+        android:name="com.project.myapplication.CatFragment"
+        android:label="fragment_cat"
+        tools:layout="@layout/fragment_cat">
+
+        <action
+            android:id="@+id/action_catFragment_to_catDetailFragment"
+            app:destination="@id/catDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dogDetailFragment"
+        android:name="com.project.myapplication.DogDetailFragment"
+        android:label="fragment_dog_detail"
+        tools:layout="@layout/fragment_dog_detail">
+
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="age"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/catDetailFragment"
+        android:name="com.project.myapplication.CatDetailFragment"
+        android:label="fragment_cat_detail"
+        tools:layout="@layout/fragment_cat_detail">
+
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="age"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.project.myapplication.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
